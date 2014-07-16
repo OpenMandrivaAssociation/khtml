@@ -19,6 +19,7 @@ BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: cmake(KF5JS)
 BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Codecs)
+BuildRequires: cmake(KF5GlobalAccel)
 Requires: %{libname} = %{EVRD}
 
 %description
