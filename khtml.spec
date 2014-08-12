@@ -21,6 +21,7 @@ BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Codecs)
 BuildRequires: cmake(KF5GlobalAccel)
 BuildRequires: cmake(KF5XmlGui)
+BuildRequires: cmake(KF5KIO)
 Requires: %{libname} = %{EVRD}
 
 %description
