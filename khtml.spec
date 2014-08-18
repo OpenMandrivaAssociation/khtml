@@ -25,6 +25,7 @@ BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5Notifications)
 BuildRequires: cmake(KF5Parts)
 BuildRequires: cmake(KF5Wallet)
+BuildRequires: giflib-devel
 Requires: %{libname} = %{EVRD}
 
 %description
