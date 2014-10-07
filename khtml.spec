@@ -4,7 +4,7 @@
 %define debug_package %{nil}
 
 Name: khtml
-Version: 5.1.0
+Version: 5.3.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
@@ -72,7 +72,6 @@ mv %{buildroot}%{_prefix}/mkspecs %{buildroot}%{_libdir}/qt5
 %{_datadir}/kf%{major}/khtml
 %{_datadir}/kf%{major}/kjava
 %{_datadir}/kxmlgui5/khtml
-%{_datadir}/khtml
 %{_datadir}/kservices%{major}/*.desktop
 %{_libdir}/plugins/kf%{major}/parts/*
 
