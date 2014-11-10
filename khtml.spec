@@ -2,11 +2,12 @@
 %define libname %mklibname KF5Html %{major}
 %define devname %mklibname KF5Html -d
 %define debug_package %{nil}
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: khtml
-Version: 5.3.0
+Version: 5.4.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/portingAids/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
 URL: http://kde.org/
 License: LGPL v2.1
