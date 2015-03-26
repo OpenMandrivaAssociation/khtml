@@ -16,8 +16,16 @@ BuildRequires: qmake5
 BuildRequires: cmake
 BuildRequires: ninja
 BuildRequires: extra-cmake-modules5
+BuildRequires: pkgconfig(phonon4qt5)
 BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Network)
+BuildRequires: pkgconfig(Qt5PrintSupport)
 BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5X11Extras)
+BuildRequires: pkgconfig(Qt5Xml)
 BuildRequires: cmake(KF5JS)
 BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Codecs)
@@ -28,6 +36,11 @@ BuildRequires: cmake(KF5Notifications)
 BuildRequires: cmake(KF5Parts)
 BuildRequires: cmake(KF5Wallet)
 BuildRequires: giflib-devel
+BuildRequires: jpeg-devel
+BuildRequires: pkgconfig(libpng)
+BuildRequires: pkgconfig(openssl)
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(zlib)
 Requires: %{libname} = %{EVRD}
 
 %description
