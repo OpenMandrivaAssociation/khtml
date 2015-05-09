@@ -5,17 +5,14 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: khtml
-Version: 5.9.0
+Version: 5.10.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
 URL: http://kde.org/
 License: LGPL v2.1
 Group: System/Libraries
-BuildRequires: qmake5
-BuildRequires: cmake
-BuildRequires: ninja
-BuildRequires: extra-cmake-modules5
+BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(phonon4qt5)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
@@ -71,14 +68,14 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja install -C build
+%ninja_install -C build
+
 %find_lang %{name}%{major}
 
 %files -f %{name}%{major}.lang
