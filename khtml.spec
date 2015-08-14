@@ -68,6 +68,7 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
+%define _disable_lto 1
 %cmake_kde5
 
 %build
