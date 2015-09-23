@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   khtml-5.13.0.tar.xz: af7d198028c487bb05773eb1bb0d34ffe0500578
+sources:
+  khtml-5.14.0.tar.xz: 02aabade0cced403816be1edbdb571dd249cff25
