@@ -83,7 +83,6 @@ Development files (Headers etc.) for %{name}.
 %{_sysconfdir}/xdg/khtmlrc
 %{_datadir}/kf%{major}/khtml
 %{_datadir}/kf%{major}/kjava
-%{_datadir}/kxmlgui5/khtml
 %{_datadir}/kservices%{major}/*.desktop
 %{_libdir}/qt5/plugins/kf%{major}/parts/*
 
