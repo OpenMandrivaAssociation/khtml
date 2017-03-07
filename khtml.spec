@@ -5,9 +5,10 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: khtml
-Version: 5.31.0
+Version: 5.32.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
+Patch0: khtml-5.32.0-qt-5.9.patch
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
 URL: http://kde.org/
 License: LGPL v2.1
