@@ -38,6 +38,7 @@ BuildRequires: pkgconfig(libpng)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(zlib)
+BuildRequires: gperf
 Requires: %{libname} = %{EVRD}
 
 %description
