@@ -33,6 +33,7 @@ BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5Notifications)
 BuildRequires: cmake(KF5Parts)
 BuildRequires: cmake(KF5Wallet)
+BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: giflib-devel
 BuildRequires: jpeg-devel
 BuildRequires: pkgconfig(libpng)
