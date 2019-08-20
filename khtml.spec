@@ -6,7 +6,7 @@
 
 Name: khtml
 Version: 5.61.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
 URL: http://kde.org/
@@ -70,9 +70,7 @@ Requires: %{name} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 %prep
-%setup -q
-%apply_patches
-%define _disable_lto 1
+%autosetup -p1
 %cmake_kde5
 
 %build
