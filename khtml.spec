@@ -3,17 +3,12 @@
 %define devname %mklibname KF5Html -d
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-# (tpg) 2019-08-20
-# fragment is larger than or outside of variable
-#  call void @llvm.dbg.value(metadata i64 %439, metadata !155850, metadata !DIExpression(DW_OP_LLVM_fragment, 128, 64)), !dbg !943919
-# !155850 = !DILocalVariable(name: "yyval", scope: !155822, file: !155029, line: 1841, type: !155829)
-# LLVM ERROR: Broken module found, compilation aborted!
-#clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
-%define _disable_lto 1
+
+%global optflags %{optflags} -O3
 
 Name: khtml
 Version: 5.70.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
 URL: http://kde.org/
@@ -43,7 +38,7 @@ BuildRequires: cmake(KF5Parts)
 BuildRequires: cmake(KF5Wallet)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: giflib-devel
-BuildRequires: jpeg-devel
+BuildRequires: pkgconfig(libjpeg)
 BuildRequires: pkgconfig(libpng)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(x11)
