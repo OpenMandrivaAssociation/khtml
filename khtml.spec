@@ -7,7 +7,7 @@
 %global optflags %{optflags} -O3
 
 Name: khtml
-Version: 5.72.0
+Version: 5.73.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
@@ -85,7 +85,7 @@ Development files (Headers etc.) for %{name}.
 
 %files -f %{name}%{major}.lang
 %{_sysconfdir}/xdg/khtmlrc
-%{_datadir}/qlogging-categories5/khtml.categories
+%{_datadir}/qlogging-categories5/khtml.*categories
 %{_datadir}/kf%{major}/khtml
 %{_datadir}/kf%{major}/kjava
 %{_datadir}/kservices%{major}/*.desktop
