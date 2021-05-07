@@ -1,14 +1,24 @@
 %define major 5
 %define libname %mklibname KF5Html %{major}
 %define devname %mklibname KF5Html -d
-%define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+# FIXME
+# 2021/05/07, khtml 5.82.0, clang 12.0, lld 12.0:
+# fragment covers entire variable
+#  call void @llvm.dbg.declare(metadata { i32, i8 }* undef, metadata !161197, metadata !DIExpression(DW_OP_LLVM_fragment, 0, 64)), !dbg !959135
+# !161197 = !DILocalVariable(name: "yyval", scope: !161169, file: !160376, line: 1841, type: !161176)
+# fragment is larger than or outside of variable
+#  call void @llvm.dbg.value(metadata i16* %411, metadata !161197, metadata !DIExpression(DW_OP_LLVM_fragment, 64, 64)), !dbg !959136
+# !161197 = !DILocalVariable(name: "yyval", scope: !161169, file: !160376, line: 1841, type: !161176)
+# fragment is larger than or outside of variable
+# [...]
+%define _disable_lto 1
 
 %global optflags %{optflags} -O3
 
 Name: khtml
-Version: 5.81.0
-Release: 2
+Version: 5.82.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
 URL: http://kde.org/
