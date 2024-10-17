@@ -21,7 +21,7 @@ Version: 5.116.0
 Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: The KDE Frameworks 5 HTML library (for compatibility with 4.x)
-URL: http://kde.org/
+URL: https://kde.org/
 License: LGPL v2.1
 Group: System/Libraries
 BuildRequires: cmake(ECM)
